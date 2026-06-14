@@ -23,6 +23,18 @@ public class adoptante_service {
         return adoptanteRepository.findById(id).orElseThrow(() -> new RuntimeException("No se encontro el adoptante"));
     }
 
+    public adoptante_model actualizar(Integer id, adoptante_model request){
+        adoptante_model adoptante = consultarAdoptanteID(id);
+
+        adoptante.setNombre(request.getNombre());
+        adoptante.setApellidoPaterno(request.getApellidoPaterno());
+        adoptante.setApellidoMaterno(request.getApellidoMaterno());
+        adoptante.setCorreo(request.getCorreo());
+        adoptante.setTelefono(request.getTelefono());
+
+        return adoptanteRepository.save(adoptante);
+    }
+
     public void eliminarAdoptante(Integer id){
         adoptante_model adoptante = consultarAdoptanteID(id);
         adoptante.setEstado(0); // Se desactiva

@@ -34,5 +34,5 @@ public class vacunaMascota_model {
     @Column(name = "veterinario_responsable")
     private String veterinarioResponsable;
 
-    private Integer estado;
+    private Integer estado = 1;
 }

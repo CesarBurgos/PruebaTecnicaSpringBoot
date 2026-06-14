@@ -1,6 +1,10 @@
 package com.project.ulapets.controller;
 
+import com.project.ulapets.dto.ApiResponse;
+import com.project.ulapets.model.dispositivoMascota_model;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.project.ulapets.service.domicilio_service;
 import com.project.ulapets.model.domicilioAdoptante_model;
@@ -13,22 +17,30 @@ public class domicilio_controller {
     private final domicilio_service domicilioService;
 
     @GetMapping
-    public List<domicilioAdoptante_model> listaDomiciliosAdoptantes(){
-        return domicilioService.listaDomiciliosAdoptantes();
+    public ResponseEntity<ApiResponse<?>> listaDomiciliosAdoptantes(){
+        return ResponseEntity.ok(new ApiResponse<>(true, "ok", domicilioService.listaDomiciliosAdoptantes()));
     }
 
     @GetMapping("/{id}")
-    public domicilioAdoptante_model buscarID(@PathVariable Integer id){
-        return domicilioService.consultarDomicilioAdoptanteID(id);
+    public ResponseEntity<ApiResponse<?>> buscarID(@PathVariable Integer id){
+        try {
+            domicilioAdoptante_model domAdoptante = domicilioService.consultarDomicilioAdoptanteID(id);
+            return ResponseEntity.ok(new ApiResponse<>(true, "ok", domAdoptante));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponse<>(false, "No se encontró el domicilio del Adoptante", null));
+        }
     }
 
     @PostMapping
-    public domicilioAdoptante_model guardarDispositivo(@RequestBody domicilioAdoptante_model dataDomicilioAdoptanteModel){
-        return domicilioService.registarDomicilioAdoptante(dataDomicilioAdoptanteModel);
+    public ResponseEntity<ApiResponse<?>> guardarDispositivo(@RequestBody domicilioAdoptante_model dataDomicilioAdoptanteModel){
+        return ResponseEntity.ok(new ApiResponse<>(true, "ok", domicilioService.registarDomicilioAdoptante(dataDomicilioAdoptanteModel)));
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id){
+    public ResponseEntity<ApiResponse<?>> eliminar(@PathVariable Integer id){
         domicilioService.eliminarDomicilio(id);
+
+        return ResponseEntity.ok(new ApiResponse<>(true, "ok", null));
     }
 }

@@ -32,5 +32,5 @@ public class dispositivoMascota_model {
     @Column(name = "fecha_instalacion")
     private String fechaInstalacion;
 
-    private Integer estado;
+    private Integer estado = 1;
 }

@@ -1,7 +1,11 @@
 package com.project.ulapets.controller;
 
+import com.project.ulapets.dto.ApiResponse;
+import com.project.ulapets.model.mascota_model;
 import com.project.ulapets.model.vacunaMascota_model;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.project.ulapets.service.vacunaMascota_service;
 
@@ -14,22 +18,30 @@ public class vacunaMascotas_controller {
     private final vacunaMascota_service vacunaMascotaService;
 
     @GetMapping
-    public List<vacunaMascota_model> listaDomiciliosAdoptantes(){
-        return vacunaMascotaService.listaVacunasMascotas();
+    public ResponseEntity<ApiResponse<?>> listaDomiciliosAdoptantes(){
+        return ResponseEntity.ok(new ApiResponse<>(true, "ok", vacunaMascotaService.listaVacunasMascotas()));
     }
 
     @GetMapping("/{id}")
-    public vacunaMascota_model buscarID(@PathVariable Integer id){
-        return vacunaMascotaService.consultarVacunaID(id);
+    public ResponseEntity<ApiResponse<?>> buscarID(@PathVariable Integer id){
+        try {
+            vacunaMascota_model vacuna = vacunaMascotaService.consultarVacunaID(id);
+            return ResponseEntity.ok(new ApiResponse<>(true, "ok", vacuna));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponse<>(false, "No se encontró la mascota", null));
+        }
     }
 
     @PostMapping
-    public vacunaMascota_model guardarDispositivo(@RequestBody vacunaMascota_model dataVacuna){
-        return vacunaMascotaService.registarVacunaMascota(dataVacuna);
+    public ResponseEntity<ApiResponse<?>> guardarDispositivo(@RequestBody vacunaMascota_model dataVacuna){
+        return ResponseEntity.ok(new ApiResponse<>(true, "ok", vacunaMascotaService.registarVacunaMascota(dataVacuna)));
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id){
+    public ResponseEntity<ApiResponse<?>> eliminar(@PathVariable Integer id){
         vacunaMascotaService.eliminarVacuna(id);
+
+        return ResponseEntity.ok(new ApiResponse<>(true, "ok", null));
     }
 }

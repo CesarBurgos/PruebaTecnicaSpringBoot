@@ -37,5 +37,5 @@ public class domicilioAdoptante_model {
     @Column(name = "codigo_postal")
     private String codigoPostal;
 
-    private Integer estado;
+    private Integer estado = 1;
 }

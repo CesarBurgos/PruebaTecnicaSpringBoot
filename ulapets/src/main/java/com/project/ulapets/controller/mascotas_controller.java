@@ -1,7 +1,11 @@
 package com.project.ulapets.controller;
 
+import com.project.ulapets.dto.ApiResponse;
+import com.project.ulapets.model.domicilioAdoptante_model;
 import com.project.ulapets.model.mascota_model;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.project.ulapets.service.mascota_service;
 
@@ -14,22 +18,30 @@ public class mascotas_controller {
     private final mascota_service mascotasService;
 
     @GetMapping
-    public List<mascota_model> listaMascotas(){
-        return mascotasService.listaMascotas();
+    public ResponseEntity<ApiResponse<?>> listaMascotas(){
+        return ResponseEntity.ok(new ApiResponse<>(true, "ok", mascotasService.listaMascotas()));
     }
 
     @GetMapping("/{id}")
-    public mascota_model buscarID(@PathVariable Integer id){
-        return mascotasService.consultarMascotaID(id);
+    public ResponseEntity<ApiResponse<?>>  buscarID(@PathVariable Integer id){
+        try {
+            mascota_model mascota = mascotasService.consultarMascotaID(id);
+            return ResponseEntity.ok(new ApiResponse<>(true, "ok", mascota));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponse<>(false, "No se encontró la mascota", null));
+        }
     }
 
     @PostMapping
-    public mascota_model regitrar(@RequestBody mascota_model dataMascotaModel){
-        return mascotasService.registarMascota(dataMascotaModel);
+    public ResponseEntity<ApiResponse<?>>  regitrar(@RequestBody mascota_model dataMascotaModel){
+        return ResponseEntity.ok(new ApiResponse<>(true, "ok", mascotasService.registarMascota(dataMascotaModel)));
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable Integer id){
+    public ResponseEntity<ApiResponse<?>>  eliminar(@PathVariable Integer id){
         mascotasService.eliminarMascota(id);
+
+        return ResponseEntity.ok(new ApiResponse<>(true, "ok", null));
     }
 }

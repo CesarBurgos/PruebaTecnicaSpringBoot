@@ -37,5 +37,5 @@ public class mascota_model {
 
     private String color;
 
-    private Integer estado;
+    private Integer estado = 1;
 }

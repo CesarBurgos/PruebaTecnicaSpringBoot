@@ -33,5 +33,5 @@ public class adoptante_model {
     @Column(name = "fecha_registro")
     private String fechaRegistro;
 
-    private Integer estado;
+    private Integer estado = 1;
 }
