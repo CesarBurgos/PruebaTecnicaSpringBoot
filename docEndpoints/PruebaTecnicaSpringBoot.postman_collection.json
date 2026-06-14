@@ -1,0 +1,1225 @@
+{
+	"info": {
+		"_postman_id": "2cf984ef-262b-445f-ba24-55e2cedc9a5d",
+		"name": "PruebaTecnicaSpringBoot",
+		"description": "Documentación correspondiente a la prueba Técnica hecha con SpringBoot de Java",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "55125712",
+		"_collection_link": "https://ed-cesar-burgos-8898624.postman.co/workspace/Personal-Workspace~539ac8c5-2dfc-48ce-b645-719c6e96cb4f/collection/55125712-2cf984ef-262b-445f-ba24-55e2cedc9a5d?action=share&source=collection_link&creator=55125712"
+	},
+	"item": [
+		{
+			"name": "Adoptantes",
+			"item": [
+				{
+					"name": "1) Registrar Adoptante",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Carlos\",\r\n    \"apellidoPaterno\": \"Sanchez\",\r\n    \"apellidoMaterno\": \"Gonzalez\",\r\n    \"telefono\": \"4771234567\",\r\n    \"correo\": \"carlos@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/adoptantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"adoptantes"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "EjemploInserción",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nombre\": \"Carlos\",\r\n    \"apellidoPaterno\": \"Sanchez\",\r\n    \"apellidoMaterno\": \"Gonzalez\",\r\n    \"telefono\": \"4771234567\",\r\n    \"correo\": \"carlos@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/adoptantes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"adoptantes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 05:51:23 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"idAdoptante\": 6,\n    \"nombre\": \"Carlos\",\n    \"apellidoPaterno\": \"Sanchez\",\n    \"apellidoMaterno\": \"Gonzalez\",\n    \"telefono\": \"4771234567\",\n    \"correo\": \"carlos@gmail.com\",\n    \"fechaRegistro\": null,\n    \"estado\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "2) Lista de adoptantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/adoptantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"adoptantes"
+							]
+						},
+						"description": "Endpoint obligatorio que retorna la lista de adoptantes registrados"
+					},
+					"response": [
+						{
+							"name": "ListaVacia",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/adoptantes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"adoptantes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 05:33:32 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						},
+						{
+							"name": "Lista de adoptantes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/adoptantes",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"adoptantes"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 06:11:13 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": [\n        {\n            \"idAdoptante\": 6,\n            \"nombre\": \"Carlos\",\n            \"apellidoPaterno\": \"Sanchez\",\n            \"apellidoMaterno\": \"Gonzalez\",\n            \"telefono\": \"4771234567\",\n            \"correo\": \"carlos@gmail.com\",\n            \"fechaRegistro\": null,\n            \"estado\": 1\n        },\n        {\n            \"idAdoptante\": 7,\n            \"nombre\": \"Carlos\",\n            \"apellidoPaterno\": \"Sanchez\",\n            \"apellidoMaterno\": \"Gonzalez\",\n            \"telefono\": \"4771234567\",\n            \"correo\": \"carlos@gmail.com\",\n            \"fechaRegistro\": null,\n            \"estado\": 1\n        },\n        {\n            \"idAdoptante\": 8,\n            \"nombre\": \"Juan\",\n            \"apellidoPaterno\": \"Perez\",\n            \"apellidoMaterno\": \"Lopez\",\n            \"telefono\": \"4771234567\",\n            \"correo\": \"carlos@gmail.com\",\n            \"fechaRegistro\": null,\n            \"estado\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "3) Adoptante ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Info Consultante",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/adoptantes/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"adoptantes",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 06:11:45 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": {\n        \"idAdoptante\": 6,\n        \"nombre\": \"Carlos\",\n        \"apellidoPaterno\": \"Sanchez\",\n        \"apellidoMaterno\": \"Gonzalez\",\n        \"telefono\": \"4771234567\",\n        \"correo\": \"carlos@gmail.com\",\n        \"fechaRegistro\": null,\n        \"estado\": 1\n    }\n}"
+						},
+						{
+							"name": "Sin existencia",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/adoptantes/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"adoptantes",
+										"3"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 06:12:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"mensaje\": \"No se encontró consultante\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "4) Actualizando info",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nombre\": \"Juan EDITADO\",\r\n\"apellidoPaterno\": \"Sanchez EDITADO\",\r\n\"apellidoMaterno\": \"Gonzalez EDITADO\",\r\n\"telefono\": \"1111111\",\r\n\"correo\": \"carlosEDITADO@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/adoptantes/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"adoptantes",
+								"8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Cambio Realizado",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\"nombre\": \"Juan EDITADO\",\r\n\"apellidoPaterno\": \"Sanchez EDITADO\",\r\n\"apellidoMaterno\": \"Gonzalez EDITADO\",\r\n\"telefono\": \"1111111\",\r\n\"correo\": \"carlosEDITADO@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/adoptantes/8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"adoptantes",
+										"8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 06:23:42 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": {\n        \"idAdoptante\": 8,\n        \"nombre\": \"Juan EDITADO\",\n        \"apellidoPaterno\": \"Sanchez EDITADO\",\n        \"apellidoMaterno\": \"Gonzalez EDITADO\",\n        \"telefono\": \"1111111\",\n        \"correo\": \"carlosEDITADO@gmail.com\",\n        \"fechaRegistro\": null,\n        \"estado\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "5) Eliminacion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/adoptantes/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"adoptantes",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Eliminado",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/adoptantes/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"adoptantes",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 06:26:26 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			],
+			"description": "Folder que contiene la documentación correspondiente a los endpoints de adoptantes."
+		},
+		{
+			"name": "Mascotas",
+			"item": [
+				{
+					"name": "1) Registrar Mascota",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idadoptante\":1,\r\n    \"nombre\": \"pinky\",\r\n    \"especie\":\"canino\",\r\n    \"raza\":\"chihuahua\",\r\n    \"sexo\":\"M\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/mascotas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"mascotas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "adoptanteInvalido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idadoptante\":1,\r\n    \"nombre\": \"pinky\",\r\n    \"especie\":\"canino\",\r\n    \"raza\":\"chihuahua\",\r\n    \"sexo\":\"M\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/mascotas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"mascotas"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:16:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"mensaje\": \"Debe ingresar un ID adoptante valido\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Registro Valido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idAdoptante\":7,\r\n    \"nombre\": \"pinky\",\r\n    \"especie\":\"canino\",\r\n    \"raza\":\"chihuahua\",\r\n    \"sexo\":\"M\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/mascotas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"mascotas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:18:36 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": {\n        \"idMascota\": 1,\n        \"idAdoptante\": {\n            \"idAdoptante\": 7,\n            \"nombre\": \"Carlos\",\n            \"apellidoPaterno\": \"Sanchez\",\n            \"apellidoMaterno\": \"Gonzalez\",\n            \"telefono\": \"4771234567\",\n            \"correo\": \"carlos@gmail.com\",\n            \"fechaRegistro\": null,\n            \"estado\": 1\n        },\n        \"nombre\": \"pinky\",\n        \"especie\": \"canino\",\n        \"raza\": \"chihuahua\",\n        \"sexo\": \"M\",\n        \"fechaNacimiento\": null,\n        \"peso\": null,\n        \"color\": null,\n        \"estado\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "2) Buscar Mascotas Por Consultante",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/api/mascotas/adoptante/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"mascotas",
+								"adoptante",
+								"6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sin registros",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/mascotas/adoptante/6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"mascotas",
+										"adoptante",
+										"6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:22:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "Registros",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/mascotas/adoptante/7",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"mascotas",
+										"adoptante",
+										"7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:22:43 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": [\n        {\n            \"idMascota\": 1,\n            \"idAdoptante\": {\n                \"idAdoptante\": 7,\n                \"nombre\": \"Carlos\",\n                \"apellidoPaterno\": \"Sanchez\",\n                \"apellidoMaterno\": \"Gonzalez\",\n                \"telefono\": \"4771234567\",\n                \"correo\": \"carlos@gmail.com\",\n                \"fechaRegistro\": null,\n                \"estado\": 1\n            },\n            \"nombre\": \"pinky\",\n            \"especie\": \"canino\",\n            \"raza\": \"chihuahua\",\n            \"sexo\": \"M\",\n            \"fechaNacimiento\": null,\n            \"peso\": null,\n            \"color\": null,\n            \"estado\": 1\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "Contiene los endpointas acerca del procesamiento de la información de las mascotas"
+		},
+		{
+			"name": "Dispositivo",
+			"item": [
+				{
+					"name": "1) Registrar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idMascota\":2,\r\n    \"numeroChip\": \"ADD211\",\r\n    \"tipoDispositivo\":\"Microchip\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/dispositivosMascotas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"dispositivosMascotas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sin almacenamiento",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idMascota\":2,\r\n    \"numeroChip\": \"ADD211\",\r\n    \"tipoDispositivo\":\"Microchip\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/dispositivosMascotas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"dispositivosMascotas"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:41:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"mensaje\": \"No existe la mascota\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Registrado",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idMascota\":1,\r\n    \"numeroChip\": \"ADD211\",\r\n    \"tipoDispositivo\":\"Microchip\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/dispositivosMascotas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"dispositivosMascotas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:42:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": {\n        \"idDispositivo\": 1,\n        \"idMascota\": {\n            \"idMascota\": 1,\n            \"idAdoptante\": {\n                \"idAdoptante\": 7,\n                \"nombre\": \"Carlos\",\n                \"apellidoPaterno\": \"Sanchez\",\n                \"apellidoMaterno\": \"Gonzalez\",\n                \"telefono\": \"4771234567\",\n                \"correo\": \"carlos@gmail.com\",\n                \"fechaRegistro\": null,\n                \"estado\": 1\n            },\n            \"nombre\": \"pinky\",\n            \"especie\": \"canino\",\n            \"raza\": \"chihuahua\",\n            \"sexo\": \"M\",\n            \"fechaNacimiento\": null,\n            \"peso\": null,\n            \"color\": null,\n            \"estado\": 1\n        },\n        \"numChip\": \"ADD211\",\n        \"tipoDispositivo\": \"Microchip\",\n        \"fechaInstalacion\": \"2026-06-14T02:42:05.5971139\",\n        \"estado\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "2) Lista de dispositivos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Sin registros",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/dispositivosMascotas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"dispositivosMascotas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:38:50 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": []\n}"
+						},
+						{
+							"name": "Historial",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/dispositivosMascotas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"dispositivosMascotas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:42:21 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": [\n        {\n            \"idDispositivo\": 1,\n            \"idMascota\": {\n                \"idMascota\": 1,\n                \"idAdoptante\": {\n                    \"idAdoptante\": 7,\n                    \"nombre\": \"Carlos\",\n                    \"apellidoPaterno\": \"Sanchez\",\n                    \"apellidoMaterno\": \"Gonzalez\",\n                    \"telefono\": \"4771234567\",\n                    \"correo\": \"carlos@gmail.com\",\n                    \"fechaRegistro\": null,\n                    \"estado\": 1\n                },\n                \"nombre\": \"pinky\",\n                \"especie\": \"canino\",\n                \"raza\": \"chihuahua\",\n                \"sexo\": \"M\",\n                \"fechaNacimiento\": null,\n                \"peso\": null,\n                \"color\": null,\n                \"estado\": 1\n            },\n            \"numChip\": \"ADD211\",\n            \"tipoDispositivo\": \"Microchip\",\n            \"fechaInstalacion\": \"2026-06-14T02:42:05\",\n            \"estado\": 1\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"description": "Contiene los endpoints que interacturarán con la información de los dispositivos"
+		},
+		{
+			"name": "Vacuna",
+			"item": [
+				{
+					"name": "1) Registrar Vacuna",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idMascota\":2,\r\n    \"nombre\": \"parvovirus\",\r\n    \"veterinarioResponsable\":\"Jose Herrera\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/api/vacunaMascotas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"vacunaMascotas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Sin registro",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idMascota\":2,\r\n    \"nombre\": \"parvovirus\",\r\n    \"veterinarioResponsable\":\"Jose Herrera\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/vacunaMascotas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"vacunaMascotas"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:26:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"mensaje\": \"No se encontró a la mascota\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Registro",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"idMascota\":1,\r\n    \"nombreVacuna\": \"parvovirus\",\r\n    \"veterinarioResponsable\":\"Jose Herrera\",\r\n    \"fechaAplicacion\": \"2026-06-14T10:30:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8090/api/vacunaMascotas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"vacunaMascotas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:32:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": {\n        \"idVacuna\": 1,\n        \"idMascota\": {\n            \"idMascota\": 1,\n            \"idAdoptante\": {\n                \"idAdoptante\": 7,\n                \"nombre\": \"Carlos\",\n                \"apellidoPaterno\": \"Sanchez\",\n                \"apellidoMaterno\": \"Gonzalez\",\n                \"telefono\": \"4771234567\",\n                \"correo\": \"carlos@gmail.com\",\n                \"fechaRegistro\": null,\n                \"estado\": 1\n            },\n            \"nombre\": \"pinky\",\n            \"especie\": \"canino\",\n            \"raza\": \"chihuahua\",\n            \"sexo\": \"M\",\n            \"fechaNacimiento\": null,\n            \"peso\": null,\n            \"color\": null,\n            \"estado\": 1\n        },\n        \"nombreVacuna\": \"parvovirus\",\n        \"fechaAplicacion\": \"2026-06-14T10:30:00\",\n        \"fechaProximaDosis\": \"2027-06-14T10:30:00\",\n        \"veterinarioResponsable\": null,\n        \"estado\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "2) Historial de vacunas",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Sin registro",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/vacunaMascotas/4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"vacunaMascotas",
+										"4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:34:06 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"mensaje\": \"No se encontró la mascota\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Historial de Mascota",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8090/api/vacunaMascotas/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8090",
+									"path": [
+										"api",
+										"vacunaMascotas",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 14 Jun 2026 08:34:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"mensaje\": \"ok\",\n    \"data\": {\n        \"idVacuna\": 1,\n        \"idMascota\": {\n            \"idMascota\": 1,\n            \"idAdoptante\": {\n                \"idAdoptante\": 7,\n                \"nombre\": \"Carlos\",\n                \"apellidoPaterno\": \"Sanchez\",\n                \"apellidoMaterno\": \"Gonzalez\",\n                \"telefono\": \"4771234567\",\n                \"correo\": \"carlos@gmail.com\",\n                \"fechaRegistro\": null,\n                \"estado\": 1\n            },\n            \"nombre\": \"pinky\",\n            \"especie\": \"canino\",\n            \"raza\": \"chihuahua\",\n            \"sexo\": \"M\",\n            \"fechaNacimiento\": null,\n            \"peso\": null,\n            \"color\": null,\n            \"estado\": 1\n        },\n        \"nombreVacuna\": \"parvovirus\",\n        \"fechaAplicacion\": \"2026-06-14T10:30:00\",\n        \"fechaProximaDosis\": \"2027-06-14T10:30:00\",\n        \"veterinarioResponsable\": null,\n        \"estado\": 1\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Contiene los endpoints que interactuarán con la información de las vacunas"
+		}
+	]
+}
