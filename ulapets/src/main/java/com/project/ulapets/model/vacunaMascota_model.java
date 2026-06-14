@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "vacuna_mascota")
 @Data
@@ -26,10 +29,10 @@ public class vacunaMascota_model {
     private String nombreVacuna;
 
     @Column(name = "fecha_aplicacion")
-    private String fechaAplicacion;
+    private LocalDateTime fechaAplicacion = LocalDateTime.now();
 
     @Column(name = "fecha_proxima_dosis")
-    private String fechaProximaDosis;
+    private LocalDateTime fechaProximaDosis;
 
     @Column(name = "veterinario_responsable")
     private String veterinarioResponsable;

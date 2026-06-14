@@ -1,6 +1,7 @@
 package com.project.ulapets.controller;
 
 import com.project.ulapets.dto.ApiResponse;
+import com.project.ulapets.dto.mascotaRequest;
 import com.project.ulapets.model.domicilioAdoptante_model;
 import com.project.ulapets.model.mascota_model;
 import lombok.RequiredArgsConstructor;
@@ -33,8 +34,19 @@ public class mascotas_controller {
         }
     }
 
+    @GetMapping("/adoptante/{idAdoptante}")
+    public ResponseEntity<ApiResponse<?>>  obtenerPorAdoptante(@PathVariable Integer idAdoptante) {
+        try {
+            List<mascota_model> mascotas = mascotasService.obtenerPorAdoptante(idAdoptante);
+            return ResponseEntity.ok(new ApiResponse<>(true, "ok", mascotas));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponse<>(false, "No se encontraron mascotas con el adoptante", null));
+        }
+    }
+
     @PostMapping
-    public ResponseEntity<ApiResponse<?>>  regitrar(@RequestBody mascota_model dataMascotaModel){
+    public ResponseEntity<ApiResponse<?>>  regitrar(@RequestBody mascotaRequest dataMascotaModel){
         return ResponseEntity.ok(new ApiResponse<>(true, "ok", mascotasService.registarMascota(dataMascotaModel)));
     }
 

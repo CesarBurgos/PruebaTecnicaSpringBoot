@@ -1,7 +1,7 @@
 package com.project.ulapets.controller;
 
 import com.project.ulapets.dto.ApiResponse;
-import com.project.ulapets.model.mascota_model;
+import com.project.ulapets.dto.vacunaRequest;
 import com.project.ulapets.model.vacunaMascota_model;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -33,8 +33,20 @@ public class vacunaMascotas_controller {
         }
     }
 
+    @GetMapping("/mascota/{idMascota}")
+    public ResponseEntity<ApiResponse<?>>  historial(@PathVariable Integer idMascota) {
+
+        try {
+            List<vacunaMascota_model>  vacunas = vacunaMascotaService.obtenerHistorial(idMascota);
+            return ResponseEntity.ok(new ApiResponse<>(true, "ok", vacunas));
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body(new ApiResponse<>(false, "No se encontró la mascota", null));
+        }
+    }
+
     @PostMapping
-    public ResponseEntity<ApiResponse<?>> guardarDispositivo(@RequestBody vacunaMascota_model dataVacuna){
+    public ResponseEntity<ApiResponse<?>> guardarVacuna(@RequestBody vacunaRequest dataVacuna){
         return ResponseEntity.ok(new ApiResponse<>(true, "ok", vacunaMascotaService.registarVacunaMascota(dataVacuna)));
     }
 

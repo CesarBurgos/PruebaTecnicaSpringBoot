@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "adoptante")
 @Data
@@ -31,7 +34,7 @@ public class adoptante_model {
     private String correo;
 
     @Column(name = "fecha_registro")
-    private String fechaRegistro;
+    private LocalDateTime fechaRegistro = LocalDateTime.now();;
 
     private Integer estado = 1;
 }

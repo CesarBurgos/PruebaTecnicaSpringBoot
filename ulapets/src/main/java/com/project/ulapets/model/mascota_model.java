@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
 @Table(name = "mascota")
 @Data
@@ -31,7 +34,7 @@ public class mascota_model {
     private String sexo;
 
     @Column(name = "fecha_nacimiento")
-    private String fechaNacimiento;
+    private LocalDateTime fechaNacimiento = LocalDateTime.now();;
 
     private Double peso;
 

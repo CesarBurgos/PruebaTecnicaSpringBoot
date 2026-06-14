@@ -1,14 +1,13 @@
 package com.project.ulapets.controller;
 
 import com.project.ulapets.dto.ApiResponse;
-import com.project.ulapets.model.adoptante_model;
+import com.project.ulapets.dto.dispositivoRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.project.ulapets.service.dispositivoMascotas_service;
 import com.project.ulapets.model.dispositivoMascota_model;
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/dispositivosMascotas")
@@ -34,7 +33,7 @@ public class dispositivoMascota_controller {
     }
 
     @PostMapping
-    public ResponseEntity<ApiResponse<?>>  guardarDispositivo(@RequestBody dispositivoMascota_model dataDispositivo){
+    public ResponseEntity<ApiResponse<?>>  guardarDispositivo(@RequestBody dispositivoRequest dataDispositivo){
         return ResponseEntity.ok(new ApiResponse<>(true, "ok", dispositivoMascotasService.registarDispositivo(dataDispositivo)));
     }
 

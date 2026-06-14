@@ -5,8 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Entity
-@Table(name = "dispostivo_mascota")
+@Table(name = "dispositivo_mascota")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,14 +26,14 @@ public class dispositivoMascota_model {
     @JoinColumn(name = "id_mascota")
     private mascota_model idMascota;
 
-    @Column(name = "numero_chip")
-    private String numeroChip;
+    @Column(name = "num_chip")
+    private String numChip;
 
     @Column(name = "tipo_dispositivo")
     private String tipoDispositivo;
 
     @Column(name = "fecha_instalacion")
-    private String fechaInstalacion;
+    private LocalDateTime fechaInstalacion = LocalDateTime.now();;
 
     private Integer estado = 1;
 }
