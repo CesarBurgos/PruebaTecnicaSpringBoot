@@ -6,7 +6,7 @@ API REST desarrollada con Spring Boot para la administración de mascotas, adopt
 
 ## 📋 Descripción
 
-Este proyecto permite gestionar la información de mascotas, adoptantes y registros de vacunación mediante servicios RESTful. La descripción del proyecto se encuntra en el archivo Project.pdf
+Este proyecto permite gestionar la información de mascotas, adoptantes y registros de vacunación mediante servicios RESTful.
 
 ### Funcionalidades
 
